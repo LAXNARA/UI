@@ -1,0 +1,27 @@
+<input type="number" [(ngModel)]="id">
+<button (click)="clickMe(id)">Send</button>
+<br><br><br>
+<h1>{{result | json}}</h1>
+
+<br>
+<br><br>
+<br>
+<p>
+    <label>Name
+        <input type="text" [(ngModel)]="name">
+    </label>
+</p>
+<p>
+    <label>Age
+        <input type="number" [(ngModel)]="age">
+    </label>
+</p>
+<p>
+    <label>BelongsTo
+        <input type="text" [(ngModel)]="belongsTo">
+    </label>
+</p>
+<br>
+<button (click)="createEmployee({'name':name,'age':age,'belongsTo':belongsTo})">Create</button>
+
+<h1>{{result1 | json}}</h1>
