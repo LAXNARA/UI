@@ -8,12 +8,14 @@ import {CountrieService} from "./countrie.service";
 
 import {HttpClientModule} from "@angular/common/http";
 
+import {FormsModule} from "@angular/forms";
+
 @NgModule({
   declarations: [
     AppComponent,CountrieComponent
   ],
   imports: [
-    BrowserModule,HttpClientModule
+    BrowserModule,HttpClientModule,FormsModule
   ],
   providers: [CountrieService],
   bootstrap: [CountrieComponent]

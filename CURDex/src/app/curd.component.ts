@@ -4,9 +4,6 @@ import { ReadService } from "../app/service/read.service";
 import { UpdateService } from "../app/service/update.service";
 import { DeleteService } from "../app/service/delete.service";
 
-import 'rxjs/add/observable/fromPromise';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/mergeMap';
 
 @Component({
     selector: "curd",
@@ -20,13 +17,17 @@ export class CURDComponent {
     constructor(private _iService: InsertService,
         private _rService: ReadService,
         private _uService: UpdateService,
-        private _dService: DeleteService) { }
+        private _dService: DeleteService) { 
+
+            this._rService.rService().subscribe(res => this.getAllVar = res,
+                err => console.log(err));
+        }
 
        
-    ngOnInit():any {
-       return this._rService.rService().subscribe(res => this.getAllVar = res,
-            err => console.log(err));
-    }
+   // ngOnInit():any {
+     //  return this._rService.rService().subscribe(res => this.getAllVar = res,
+       //     err => console.log(err));
+    //}
     saveProduct(obj:any){
         this._iService.iService(obj).subscribe(res => this.insert =res,
                                                 err=>console.log(err));
